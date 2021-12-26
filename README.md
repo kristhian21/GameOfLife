@@ -13,5 +13,21 @@ Para poder ejecutar el código es necesario instalar el modulo PyGame de Python
 
 https://www.pygame.org/wiki/GettingStarted
 
+**Ejemplo:**
 
+Generación 1:
+
+<img src="img/g1.png">
+
+Generación 2:
+
+<img src="img/g2.png">
+
+Generación 3:
+
+<img src="img/g3.png">
+
+Generación 4:
+
+<img src="img/g4.png">
 
