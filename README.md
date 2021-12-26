@@ -7,7 +7,7 @@ En el año 1970 el matemático John Horton Conway diseño **El juego de la vida*
 
 ***(Las células vecinas de una célula <u>A</u> son aquellas que rodean a esta célula)***
 
-![](C:\Users\krisd\PycharmProjects\GameOfLife\img\cel_a.png)
+![](img\cel_a.png)
 
 Para poder ejecutar el código es necesario instalar el modulo PyGame de Python
 
