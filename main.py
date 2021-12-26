@@ -65,7 +65,7 @@ def dibujar_tablero(game, surf, width, height):
 
 
 def main():
-    dim_juego = 50
+    dim_juego = 10
     juego = GameOfLife(dim_juego)
     pygame.init()
     clock = pygame.time.Clock()
