@@ -66,9 +66,11 @@ def dibujar_tablero(game, surf, width, height):
 
 def main():
     dim_juego = 50
+    contador = 0
     juego = GameOfLife(dim_juego)
     pygame.init()
-    clock = pygame.time.Clock()
+    # Inicializar la fuente
+    fuente = pygame.font.SysFont("monospace", 20, True)  # Crea una fuente a partir de las fuentes del sistema
     # Se definen las dimensiones de la pantalla
     ancho = 650
     alto = 650
@@ -78,9 +80,11 @@ def main():
     # Se establece el titulo de la ventana
     pygame.display.set_caption("Game of life - En pausa")
     run = False
+    # Se guarda en una variable el objeto de la pantalla
+    surface = pygame.display.set_mode((ancho, alto))
     while True:
-        # Se guarda en una variable el objeto de la pantalla
-        surface = pygame.display.set_mode((ancho, alto))
+        surface.fill((0, 0, 0))
+        clock = pygame.time.Clock()
         # Revisa los eventos que ocurren durante la ejecucion del programa
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -99,11 +103,17 @@ def main():
                     pygame.display.set_caption("Game of life - En pausa")
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_r:
                 run = False
+                contador = 0
                 pygame.display.set_caption("Game of life - Juego reiniciado")
                 juego = GameOfLife(dim_juego)
         if run:
             juego.run()
+            contador += 1
         dibujar_tablero(juego, surface, ancho, alto)
+        # Dibuja texto en una nueva Surface
+        label = fuente.render("Generación: " + str(contador), True, (70, 247, 57))
+        # Dibuja una imagen sobre otra
+        surface.blit(label, (5, 5))
         time.sleep(0.1)
         # Esta funcion se usa para actualizar el contenido de la pantalla
         pygame.display.flip()
