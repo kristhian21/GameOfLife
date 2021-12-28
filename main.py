@@ -84,7 +84,6 @@ def main():
     surface = pygame.display.set_mode((ancho, alto))
     while True:
         surface.fill((0, 0, 0))
-        clock = pygame.time.Clock()
         # Revisa los eventos que ocurren durante la ejecucion del programa
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -114,10 +113,9 @@ def main():
         label = fuente.render("Generación: " + str(contador), True, (70, 247, 57))
         # Dibuja una imagen sobre otra
         surface.blit(label, (5, 5))
-        time.sleep(0.1)
+        time.sleep(0.12)
         # Esta funcion se usa para actualizar el contenido de la pantalla
         pygame.display.flip()
-        clock.tick(20)
 
 
 if __name__ == "__main__":
