@@ -113,7 +113,7 @@ def main():
         label = fuente.render("Generación: " + str(contador), True, (70, 247, 57))
         # Dibuja una imagen sobre otra
         surface.blit(label, (5, 5))
-        time.sleep(0.12)
+        time.sleep(0.1)
         # Esta funcion se usa para actualizar el contenido de la pantalla
         pygame.display.flip()
 
